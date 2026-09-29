@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AutoMarket — обяви за нови и употребявани автомобили от частни лица и автокъщи." />
+  <title>AutoMarket — Обяви за автомобили</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0b" />
+  <meta property="og:title" content="AutoMarket — Обяви за автомобили" />
+  <meta property="og:description" content="Намери следващата си кола: филтри по марка, цена, гориво и още. Свържи се директно с продавача." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d7182a'/%3E%3Cpath d='M9 23l7-15 7 15h-4l-3-7-3 7z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#offers">Към обявите</a>
+  
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Всяка кола има история. Намери своята.</h1>
+          <p>Пълни данни за всяка кола и телефон на продавача. Без посредници и без губене на време.</p>
+          <div class="hero-stats"><div><strong id="statCars">7</strong><span>обяви на сайта</span></div><div><strong id="statCities">6</strong><span>града в България</span></div></div>
+        </div>
+        <div class="hero-card">
+          <div class="quick-search">
+            <h2>Бързо търсене</h2>
+            <div class="quick-grid">
+              <select id="quickBrand"><option value="">Марка</option></select>
+              <select id="quickFuel">
+                <option value="">Гориво</option><option>Дизел</option><option>Бензин</option><option>Хибрид</option><option>Електрически</option><option>Газ/Бензин</option>
+              </select>
+              <input id="quickPrice" type="number" min="0" placeholder="Цена до (€)" />
+              <select id="quickYear"><option value="">Година от</option></select>
+            </div>
+            <button id="quickSearchBtn" class="primary-btn wide">Търси автомобили</button>
+            <button id="showAllFilters" class="link-btn">Покажи всички филтри</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container content-grid">
+      <aside class="filters" id="filters">
+        <div class="filter-head">
+          <div>
+            <h2>Разширено търсене</h2>
+          </div>
+          <button id="resetFilters" class="text-btn">Изчисти</button>
+        </div>
+
+        <div class="field">
+          <label>Марка</label>
+          <select id="brandFilter"><option value="">Всички марки</option></select>
+        </div>
+        <div class="field">
+          <label>Модел</label>
+          <select id="modelFilter"><option value="">Всички модели</option></select>
+        </div>
+        <div class="two-col">
+          <div class="field"><label for="priceMin">Цена от (€)</label><input id="priceMin" type="number" min="0" placeholder="0" /></div>
+          <div class="field"><label for="priceMax">Цена до (€)</label><input id="priceMax" type="number" min="0" placeholder="50000" /></div>
+        </div>
+        <div class="two-col">
+          <div class="field"><label for="yearMin">Година от</label><select id="yearMin"><option value="">Без значение</option></select></div>
+          <div class="field"><label for="yearMax">Година до</label><select id="yearMax"><option value="">Без значение</option></select></div>
+        </div>
+        <div class="field"><label for="fuelFilter">Гориво</label><select id="fuelFilter"><option value="">Всички</option><option>Дизел</option><option>Бензин</option><option>Хибрид</option><option>Електрически</option><option>Газ/Бензин</option></select></div>
+        <div class="field"><label for="gearFilter">Скоростна кутия</label><select id="gearFilter"><option value="">Всички</option><option>Автоматична</option><option>Ръчна</option></select></div>
+        <div class="field"><label for="bodyFilter">Купе</label><select id="bodyFilter"><option value="">Всички</option><option>Седан</option><option>Хечбек</option><option>Комби</option><option>SUV</option><option>Купе</option></select></div>
+        <div class="field"><label for="locationFilter">Местоположение</label><select id="locationFilter"><option value="">Цяла България</option><option>Пловдив</option><option>София</option><option>Варна</option><option>Бургас</option><option>Стара Загора</option><option>Плевен</option><option>Русе</option><option>Велико Търново</option></select></div>
+        <div class="field"><label for="sellerFilter">Продавач</label><select id="sellerFilter"><option value="">Всички</option><option>Частно лице</option><option>Автокъща</option></select></div>
+        <div class="field"><label for="conditionFilter">Състояние</label><select id="conditionFilter"><option value="">Всички</option><option>Употребяван</option><option>Нов внос</option><option>Нов</option></select></div>
+        <div class="two-col">
+          <div class="field"><label for="mileageMax">Пробег до (км)</label><input id="mileageMax" type="number" placeholder="250000" /></div>
+          <div class="field"><label for="powerMin">Мощност от (к.с.)</label><input id="powerMin" type="number" placeholder="100" /></div>
+        </div>
+        <div class="field"><label for="colorFilter">Цвят</label><select id="colorFilter"><option value="">Всички</option><option>Бял</option><option>Черен</option><option>Сив</option><option>Син</option><option>Сребрист</option></select></div>
+        <div class="field"><label for="doorsFilter">Брой врати</label><select id="doorsFilter"><option value="">Всички</option><option value="3">3</option><option value="5">5</option></select></div>
+        <div class="field"><label for="driveFilter">Задвижване</label><select id="driveFilter"><option value="">Всички</option><option>Предно</option><option>Задно</option><option>4x4</option></select></div>
+        <div class="field"><label for="euroFilter">Евростандарт</label><select id="euroFilter"><option value="">Всички</option><option>Euro 4</option><option>Euro 5</option><option>Euro 6</option></select></div>
+        <div class="field"><label for="wheelFilter">Волан</label><select id="wheelFilter"><option value="">Всички</option><option>Ляв</option><option>Десен</option></select></div>
+        <div class="field"><label for="postedFilter">Публикувана</label><select id="postedFilter"><option value="">По всяко време</option><option value="1">Последните 24 часа</option><option value="3">Последните 3 дни</option><option value="7">Последните 7 дни</option></select></div>
+
+        <details class="extras-box">
+          <summary>Екстри и оборудване</summary>
+          <div class="check-grid">
+            <label><input type="checkbox" class="extraFilter" value="Климатроник"> Климатроник</label>
+            <label><input type="checkbox" class="extraFilter" value="Кожен салон"> Кожен салон</label>
+            <label><input type="checkbox" class="extraFilter" value="Навигация"> Навигация</label>
+            <label><input type="checkbox" class="extraFilter" value="Парктроник"> Парктроник</label>
+            <label><input type="checkbox" class="extraFilter" value="Камера"> Камера</label>
+            <label><input type="checkbox" class="extraFilter" value="Подгрев"> Подгрев</label>
+            <label><input type="checkbox" class="extraFilter" value="LED"> LED фарове</label>
+            <label><input type="checkbox" class="extraFilter" value="Темпомат"> Темпомат</label>
+          </div>
+        </details>
+        <button class="primary-btn wide" id="applyFilters">Покажи офертите</button>
+      </aside>
+
+      <section class="listings" id="offers">
+        <div class="list-head">
+          <div>
+            <h2 aria-live="polite"><span id="resultCount">0</span> автомобила</h2>
+          </div>
+          <div class="list-tools"><button type="button" id="toggleFilters" class="ghost-btn filters-toggle" aria-expanded="false" aria-controls="filters">Филтри</button><select id="sortSelect" class="sort-select" aria-label="Сортиране">
+            <option value="newest">Най-нови</option>
+            <option value="priceAsc">Цена: ниска → висока</option>
+            <option value="priceDesc">Цена: висока → ниска</option>
+            <option value="yearDesc">Година: нови → стари</option>
+            <option value="mileageAsc">Пробег: нисък → висок</option>
+          </select></div>
+        </div>
+        <div id="bodyChips" class="chips-row" role="group" aria-label="Тип купе"></div>
+        <div id="activeFilters" class="active-filters"></div>
+        <div id="carsGrid" class="cars-grid"></div>
+        <div id="emptyState" class="empty-state hidden">
+          
+          <h3>Няма намерени автомобили</h3>
+          <p>Промени филтрите и опитай отново.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="how" id="how">
+      <div class="container">
+        <h2>Как работи</h2>
+        <div class="steps">
+          <article><span>01</span><h3>Търсиш</h3><p>Използваш подробни филтри по марка, модел, цена, година, гориво и още.</p></article>
+          <article><span>02</span><h3>Разглеждаш</h3><p>Отваряш обява и виждаш ключови характеристики, екстри, описание и контакт.</p></article>
+          <article><span>03</span><h3>Публикуваш</h3><p>Добавяш собствен автомобил през формата и обявата се появява веднага.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+  
+
+  
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="data.js"></script>
+  <script src="layout.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

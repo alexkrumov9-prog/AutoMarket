@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакти — AutoMarket</title><meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d7182a'/%3E%3Cpath d='M9 23l7-15 7 15h-4l-3-7-3 7z' fill='white'/%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main><section class="page-hero"><div class="container"><h1>Свържи се с нас</h1><p>Имаш въпрос за обява или за публикуване? Пишем обратно в рамките на един работен ден.</p></div></section>
+<section class="container contact-grid"><div class="prose"><h2>Данни за контакт</h2><p><b>Адрес:</b> бул. „България“ 100, Пловдив 4000</p><p><b>Телефон:</b> <a href="tel:+35932000000">032 000 000</a></p><p><b>Имейл:</b> <a href="mailto:office@automarket.bg">office@automarket.bg</a></p><p><b>Работно време:</b> Пн–Пт 9:00–18:00, Сб 10:00–14:00</p></div>
+<form class="field-form" onsubmit="event.preventDefault();this.innerHTML='<h2>Благодарим ти!</h2><p>Съобщението е прието. Ще отговорим скоро.</p>'"><h2>Изпрати съобщение</h2><div class="field"><label for="cn">Име</label><input id="cn" required></div><div class="field"><label for="ce">Имейл</label><input id="ce" type="email" required></div><div class="field"><label for="cm">Съобщение</label><textarea id="cm" rows="5" required></textarea></div><button class="primary-btn wide" type="submit">Изпрати</button></form></section></main>
+<script src="data.js"></script>
+<script src="layout.js"></script>
+
+</body>
+</html>
